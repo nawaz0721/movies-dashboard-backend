@@ -4,9 +4,11 @@ import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
 import authRoutes from "./routers/auth.js";
+import userRoutes from "./routers/user.js";
 import contactRoutes from "./routers/contactRoutes.js";
 import contactInfoRoutes from "./routers/contactInfoRoutes.js";
 import faqRoutes from "./routers/faqRoutes.js";
+import backgroundImageRoutes from "./routers/backgroundImageRoutes.js";
 
 
 
@@ -47,9 +49,11 @@ mongoose
 
 // Use routes
 app.use("/auth", authRoutes);
+app.use("/user", userRoutes);
 app.use("/contact", contactRoutes);
 app.use("/contactInfo", contactInfoRoutes);
 app.use("/faq", faqRoutes);
+app.use("/background", backgroundImageRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
